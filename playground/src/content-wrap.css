@@ -1,0 +1,2 @@
+/* Long immutable source SHA must wrap on narrow screens, not widen the page. */
+.docs-main #sources p,.docs-main #faq p{overflow-wrap:anywhere}

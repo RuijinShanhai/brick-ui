@@ -1,0 +1,6 @@
+/* A separately emitted stylesheet: explicitly loaded inside the isolated srcdoc. */
+@import '@fontsource/noto-sans-sc/400.css';
+@import './demo-layout.css';
+@import '../../components/src/button/style.css';
+:root{--vp-font-family-base:'Noto Sans SC',system-ui,sans-serif}
+body,button,input,textarea,select{font-family:'Noto Sans SC',system-ui,sans-serif!important}

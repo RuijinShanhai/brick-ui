@@ -1,0 +1,4 @@
+<script setup lang="ts">
+import { Button, ButtonGroup, Icon } from '@brick/components'
+</script>
+<template><div class="demo-stack"><h4>Basic</h4><div class="demo-row"><ButtonGroup><Button>Cancel</Button><Button>OK</Button></ButtonGroup><ButtonGroup><Button disabled>L</Button><Button disabled>M</Button><Button disabled>R</Button></ButtonGroup><ButtonGroup><Button>L</Button><Button>M</Button><Button>R</Button></ButtonGroup></div><h4>With Icon</h4><div class="demo-row"><ButtonGroup><Button type="primary"><Icon type="left"/>Go back</Button><Button type="primary">Go forward<Icon type="right"/></Button></ButtonGroup><ButtonGroup><Button type="primary" icon="cloud" aria-label="云"/><Button type="primary" icon="cloud-download" aria-label="云下载"/></ButtonGroup><ButtonGroup size="small"><Button type="primary" icon="cloud" aria-label="云"/><Button type="primary" icon="cloud-download" aria-label="云下载"/></ButtonGroup></div></div></template>

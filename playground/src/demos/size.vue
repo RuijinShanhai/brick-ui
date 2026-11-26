@@ -1,0 +1,6 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Button, ButtonGroup, Icon } from '@brick/components'
+const size = ref<'large'|'default'|'small'>('large')
+</script>
+<template><div class="demo-stack"><fieldset class="size-choice"><legend>按钮尺寸</legend><label v-for="value in (['large','default','small'] as const)" :key="value"><input v-model="size" type="radio" :value="value"/>{{value}}</label></fieldset><div class="demo-row"><Button type="primary" :size="size">Primary</Button><Button :size="size">Normal</Button><Button type="dashed" :size="size">Dashed</Button><Button type="danger" :size="size">Danger</Button><Button type="link" :size="size">Link</Button></div><div class="demo-row"><Button type="primary" icon="download" :size="size" aria-label="下载"/><Button type="primary" shape="circle" icon="download" :size="size" aria-label="下载"/><Button type="primary" shape="round" icon="download" :size="size" aria-label="下载"/><Button type="primary" shape="round" icon="download" :size="size">Download</Button><Button type="primary" icon="download" :size="size">Download</Button></div><ButtonGroup :size="size"><Button type="primary"><Icon type="left"/>Backward</Button><Button type="primary">Forward<Icon type="right"/></Button></ButtonGroup></div></template>

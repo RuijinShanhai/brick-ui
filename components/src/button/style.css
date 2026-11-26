@@ -1,0 +1,74 @@
+/* AntD3.26.20 fixed theme mapping; original Brick implementation, MIT. */
+.brick-button {
+  --brick-primary: #1890ff; --brick-hover: #40a9ff; --brick-active: #096dd9;
+  --brick-danger: #ff4d4f; --brick-danger-hover: #ff7875; --brick-danger-active: #d9363e;
+  --brick-border: #d9d9d9; --brick-button-height: 32px; --brick-button-padding: 15px;
+  position: relative; display: inline-block; box-sizing: border-box;
+  height: var(--brick-button-height); padding: 0 var(--brick-button-padding);
+  color: rgba(0,0,0,.65); background: #fff; border: 1px solid var(--brick-border);
+  border-radius: 4px; box-shadow: 0 2px 0 rgba(0,0,0,.015);
+  font-family: inherit; font-size: 14px; font-weight: 400; line-height: 1.499;
+  white-space: nowrap; text-align: center; vertical-align: middle;
+  cursor: pointer; user-select: none; touch-action: manipulation;
+  transition: color .3s, background-color .3s, border-color .3s, box-shadow .3s;
+}
+a.brick-button { line-height: calc(var(--brick-button-height) - 2px); text-decoration: none; }
+.brick-button:not(.brick-button-disabled):is(:hover,:focus) { color: var(--brick-hover); border-color: var(--brick-hover); text-decoration: none; }
+.brick-button:not(.brick-button-disabled):active { color: var(--brick-active); border-color: var(--brick-active); box-shadow: none; }
+.brick-button:focus-visible { outline: 2px solid var(--brick-primary); outline-offset: 2px; }
+.brick-button-large { --brick-button-height: 40px; font-size: 16px; }
+.brick-button-small { --brick-button-height: 24px; --brick-button-padding: 7px; border-radius: 4px; }
+.brick-button-primary { color: #fff; background: var(--brick-primary); border-color: var(--brick-primary); text-shadow: 0 -1px 0 rgba(0,0,0,.12); box-shadow: 0 2px 0 rgba(0,0,0,.045); }
+.brick-button-primary:not(.brick-button-disabled):is(:hover,:focus) { color: #fff; background: var(--brick-hover); border-color: var(--brick-hover); }
+.brick-button-primary:not(.brick-button-disabled):active { color: #fff; background: var(--brick-active); border-color: var(--brick-active); }
+.brick-button-dashed { border-style: dashed; }
+.brick-button-ghost { background: transparent; }
+.brick-button-danger { color: #fff; background: var(--brick-danger); border-color: var(--brick-danger); text-shadow: 0 -1px 0 rgba(0,0,0,.12); box-shadow: 0 2px 0 rgba(0,0,0,.045); }
+.brick-button-danger:not(.brick-button-disabled):is(:hover,:focus) { color: #fff; background: var(--brick-danger-hover); border-color: var(--brick-danger-hover); }
+.brick-button-danger:not(.brick-button-disabled):active { color: #fff; background: var(--brick-danger-active); border-color: var(--brick-danger-active); }
+.brick-button-link { color: var(--brick-primary); background: transparent; border-color: transparent; box-shadow: none; }
+.brick-button-link:not(.brick-button-disabled):is(:hover,:focus,:active) { background: transparent; border-color: transparent; }
+.brick-button-background-ghost { color: #fff; background: transparent !important; border-color: #fff; text-shadow: none; }
+.brick-button-background-ghost.brick-button-primary { color: var(--brick-primary); border-color: var(--brick-primary); }
+.brick-button-background-ghost.brick-button-danger { color: var(--brick-danger); border-color: var(--brick-danger); }
+.brick-button-background-ghost.brick-button-link { border-color: transparent; }
+.brick-button-background-ghost.brick-button-primary:not(.brick-button-disabled):is(:hover,:focus) { color: var(--brick-hover); }
+.brick-button-background-ghost.brick-button-primary:not(.brick-button-disabled):active { color: var(--brick-active); }
+.brick-button-background-ghost.brick-button-danger:not(.brick-button-disabled):is(:hover,:focus) { color: var(--brick-danger-hover); }
+.brick-button-background-ghost.brick-button-danger:not(.brick-button-disabled):active { color: var(--brick-danger-active); }
+.brick-button-icon-only { width: var(--brick-button-height); padding: 0; font-size: 16px; }
+.brick-button-large.brick-button-icon-only { font-size: 18px; }
+.brick-button-small.brick-button-icon-only { font-size: 14px; }
+.brick-button-round { padding-inline: calc(var(--brick-button-height) / 2); border-radius: var(--brick-button-height); }
+.brick-button-round.brick-button-icon-only { width: auto; }
+.brick-button-circle,.brick-button-circle-outline { min-width: var(--brick-button-height); padding-inline: 0; border-radius: 50%; }
+.brick-button-block { display: block; width: 100%; }
+.brick-icon { display: inline-block; vertical-align: -.125em; line-height: 1; flex-shrink: 0; }
+.brick-button > span,.brick-button > .brick-icon { pointer-events: none; }
+.brick-button > .brick-icon + span:not(.brick-button-wave),.brick-button > span + .brick-icon { margin-inline-start: 8px; }
+.brick-button-two-chinese-chars > :not(.brick-icon):not(.brick-button-wave) { letter-spacing: .34em; margin-inline-end: -.34em; }
+.brick-button-loading { cursor: default; }
+.brick-button-loading::before { content: ''; position: absolute; inset: -1px; background: #fff; opacity: .35; border-radius: inherit; pointer-events: none; }
+.brick-button-loading:not(.brick-button-circle):not(.brick-button-circle-outline):not(.brick-button-icon-only) { padding-left: 29px; }
+.brick-button-loading:not(.brick-button-circle):not(.brick-button-circle-outline):not(.brick-button-icon-only) > .brick-icon:not(:last-child) { margin-left: -14px; }
+.brick-button-small.brick-button-loading:not(.brick-button-circle):not(.brick-button-circle-outline):not(.brick-button-icon-only) { padding-left: 24px; }
+.brick-button-small.brick-button-loading:not(.brick-button-circle):not(.brick-button-circle-outline):not(.brick-button-icon-only) > .brick-icon { margin-left: -17px; }
+.brick-icon-spin { animation: brick-icon-spin 1s linear infinite; }
+@keyframes brick-icon-spin { to { transform: rotate(360deg); } }
+.brick-button.brick-button-disabled,.brick-button.brick-button-disabled:is(:hover,:focus,:active) { color: rgba(0,0,0,.25); background: #f5f5f5; border-color: var(--brick-border); text-shadow: none; box-shadow: none; cursor: not-allowed; }
+.brick-button-link.brick-button-disabled,.brick-button-link.brick-button-disabled:is(:hover,:focus,:active) { background: transparent; border-color: transparent; }
+.brick-button-group { display: inline-flex; position: relative; vertical-align: middle; }
+.brick-button-group > .brick-button { border-radius: 0; }
+.brick-button-group > .brick-button + .brick-button { margin-inline-start: -1px; }
+.brick-button-group > .brick-button:first-child { border-start-start-radius: 4px; border-end-start-radius: 4px; }
+.brick-button-group > .brick-button:last-child { border-start-end-radius: 4px; border-end-end-radius: 4px; }
+.brick-button-group > .brick-button-primary:not(:last-child):not(.brick-button-disabled) { border-inline-end-color: var(--brick-hover); }
+.brick-button-group > .brick-button-primary + .brick-button-primary:not(.brick-button-disabled) { border-inline-start-color: var(--brick-hover); }
+.brick-button-group > .brick-button-primary + .brick-button:not(.brick-button-primary):not(.brick-button-disabled) { border-inline-start-color: transparent; }
+.brick-button-group > .brick-button:is(:hover,:focus,:active) { z-index: 2; }
+.brick-button-group > .brick-button-disabled { z-index: 0; }
+.brick-button > .brick-button-wave { position: absolute; inset: -1px; border-radius: inherit; pointer-events: none; margin: 0; letter-spacing: normal; animation: brick-button-wave .55s ease-out both; }
+.brick-button { --brick-wave-color: var(--brick-primary); }
+.brick-button-danger { --brick-wave-color: var(--brick-danger); }
+@keyframes brick-button-wave { from { box-shadow: 0 0 0 0 var(--brick-wave-color); opacity: .35; } to { box-shadow: 0 0 0 6px var(--brick-wave-color); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .brick-button { transition: none; } .brick-icon-spin { animation-duration: 2s; } .brick-button > .brick-button-wave { animation: none; display: none; } }

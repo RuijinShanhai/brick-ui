@@ -1,0 +1,11 @@
+/* Shared by the document preview and the native Sutras editable iframe. */
+.demo-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.demo-stack{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ghost-surface{background:#bec8c8}
+.ghost-surface-disabled{padding:8px 8px 0 8px}
+.ghost-surface-standalone{padding:26px 16px 16px}
+.size-choice{display:flex;flex-wrap:wrap;gap:12px;border:1px solid #d9d9d9;padding:8px 12px;margin:0;min-width:0}
+.size-choice label{display:inline-flex;align-items:center;gap:4px}
+.actions-wrap{position:relative;display:inline-block}
+.actions-menu{position:absolute;z-index:3;top:100%;right:0;min-width:120px;display:flex;flex-direction:column;padding:4px;background:white;box-shadow:0 2px 8px #0002}
+.demo-stack output{font-size:13px}

@@ -1,0 +1,19 @@
+body{font-family:'Noto Sans SC',system-ui,sans-serif}.brick-content{min-width:0}
+/* Real runtime log text inherits this console container, not the empty-state label. */
+.terminal-box .su-console-wrapper{font-family:ui-monospace,SFMono-Regular,Consolas,'DejaVu Sans Mono','Noto Sans SC',monospace}
+/* UA pre/code monospace otherwise bypasses the host CJK fallback. Read-only only. */
+.code-panel:not(.edit) .language-vue .vp-code,.code-panel:not(.edit) .language-vue .vp-code code,.code-panel:not(.edit) .language-vue .vp-code span{font-family:ui-monospace,SFMono-Regular,Consolas,'DejaVu Sans Mono','Noto Sans SC',monospace!important}
+.su-preview-error,.su-preview-error .ant-alert-message,.su-preview-error .ant-btn,.su-preview-error .ant-btn>span{font-family:'Noto Sans SC',system-ui,sans-serif!important}
+/* AntD CSS-in-JS defines fonts on portal content, overriding body inheritance. */
+.ant-tooltip .ant-tooltip-inner,.ant-message .ant-message-notice-content,.ant-message .ant-message-custom-content,.ant-message .ant-message-custom-content>span{font-family:'Noto Sans SC',system-ui,sans-serif!important}
+.vp-doc .code-panel div.language-vue{margin:0;border-radius:0}
+.vp-doc .code-panel div.language-vue>.lang{position:absolute;top:2px;right:8px;z-index:2;font-size:12px;color:var(--vp-c-text-2)}
+.code-panel:not(.edit) .code-editor{display:none}
+.code-panel.edit .code-editor{height:330px;overflow:hidden}
+.code-panel.edit .code-editor .preview{height:330px;overflow:hidden!important}
+.code-panel.edit .code-editor .preview pre{width:max-content;min-width:100%;min-height:330px}
+.code-panel.edit .code-editor textarea.editor{height:330px!important;min-height:330px!important;overflow:auto!important;white-space:pre!important}
+.su-preview-error{position:absolute;top:28px;left:0;width:100%;max-height:calc(100% - 28px);overflow:auto;box-sizing:border-box;z-index:20}
+.error-scroll-hint{font-size:12px;padding:4px 8px;background:var(--vp-c-bg-soft)}
+.su-preview-error:focus-visible{outline:2px solid var(--vp-c-brand-1);outline-offset:-2px}
+@media(max-width:700px){.brick-header{height:auto;min-height:64px;padding:12px 16px;gap:8px;flex-wrap:wrap}.brick-header strong{font-size:21px;margin-right:auto}.site-body{display:block}.brick-sider{width:100%;padding:12px 16px;border-right:0;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brick-sider p{margin:0}.brick-sider>span{display:none}.brick-content{width:100%;padding:20px 16px}.brick-footer{font-size:12px;padding:16px}.brick-content h1{font-size:26px}.code-editor .preview pre,.code-editor textarea.editor{padding:12px!important;font-size:12px!important}.brick-readonly-source{padding:12px}}

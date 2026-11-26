@@ -1,0 +1,6 @@
+packages:
+  - components
+  - pro-components
+  - templates
+  - scaffolds
+  - playground

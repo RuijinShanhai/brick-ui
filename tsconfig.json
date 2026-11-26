@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true,
+    "paths": {"@brick/components": ["./components/src/index.ts"]}
+  },
+  "include": [
+    "components/**/*.ts",
+    "pro-components/**/*.ts",
+    "templates/**/*.ts",
+    "scaffolds/**/*.ts",
+    "playground/**/*.ts"
+  ]
+}

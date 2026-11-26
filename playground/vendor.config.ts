@@ -1,0 +1,2 @@
+import { defineConfig } from 'vite'
+export default defineConfig({build:{lib:{entry:{brick:'components/src/index.ts','button/index':'components/src/button/index.ts','button/action-menu':'components/src/button/action-menu.ts',icon:'components/src/icon.ts'},formats:['es'],fileName:(_format,name)=>name+'.js'},outDir:'playground/public/vendor',emptyOutDir:false,cssCodeSplit:false,rolldownOptions:{external:['vue'],output:{chunkFileNames:'chunks/[name]-[hash].js',assetFileNames:'brick.css'}}}})

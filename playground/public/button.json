@@ -1,0 +1,661 @@
+{
+  "name": "Brick Button",
+  "version": "0.1.0-button-candidate",
+  "upstream": {
+    "name": "Ant Design",
+    "version": "3.26.20",
+    "commit": "bc0f0b62ea809be1b5093a464c74b1ca3f906d49",
+    "url": "https://3x.ant.design/components/button-cn/",
+    "license": "MIT"
+  },
+  "intro": {
+    "zh-CN": "按钮用于开始一个即时操作。",
+    "en-US": "To trigger an operation."
+  },
+  "when": {
+    "zh-CN": "标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。",
+    "en-US": "A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic."
+  },
+  "versions": {
+    "vue": "3.5.46",
+    "typescript": "7.0.2",
+    "node": "24.22.2",
+    "nodeRequired": ">=22.12.0",
+    "vite": "8.3.8"
+  },
+  "install": "从文档下载组件tgz与demo-layout.css；本地执行 npm install ./brick-components-0.1.0-button-full-r6.tgz vue@3.5.46。导入 @brick/components 和 @brick/components/button/style.css；案例另外导入下载的 ./demo-layout.css。未发布公共npm，不能从公共registry直接安装@brick/components。",
+  "imports": "import { Button, ButtonGroup, Icon } from '@brick/components'",
+  "demos": [
+    {
+      "id": "basic",
+      "order": 0,
+      "title": {
+        "zh-CN": "按钮类型",
+        "en-US": "Type"
+      },
+      "description": {
+        "zh-CN": "按钮有五种类型：主按钮、次按钮、虚线按钮、危险按钮和链接按钮。主按钮在同一个操作区域最多出现一次。",
+        "en-US": "There are `primary` button, `default` button, `dashed` button, `danger` button and `link` button in antd."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/basic.md",
+      "sourceSHA256": "011c5b842477d72c10985951f5c76fb728e8a8bc38410cc91d459b298be4d2c3",
+      "upstreamReactCode": "import { Button } from 'antd';\n\nReactDOM.render(\n  <div>\n    <Button type=\"primary\">Primary</Button>\n    <Button>Default</Button>\n    <Button type=\"dashed\">Dashed</Button>\n    <Button type=\"danger\">Danger</Button>\n    <Button type=\"link\">Link</Button>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { Button } from '@brick/components'\n</script>\n<template><div class=\"demo-row\"><Button type=\"primary\">Primary</Button><Button>Default</Button><Button type=\"dashed\">Dashed</Button><Button type=\"danger\">Danger</Button><Button type=\"link\">Link</Button></div></template>\n",
+      "vueSourceSHA256": "6ec6452429c2a450e3c5d82338fe5c12cc243d8a825d199df854676afa51433a"
+    },
+    {
+      "id": "icon",
+      "order": 1,
+      "title": {
+        "zh-CN": "图标按钮",
+        "en-US": "Icon"
+      },
+      "description": {
+        "zh-CN": "当需要在 `Button` 内嵌入 `Icon` 时，可以设置 `icon` 属性，或者直接在 `Button` 内使用 `Icon` 组件。\n\n如果想控制 `Icon` 具体的位置，只能直接使用 `Icon` 组件，而非 `icon` 属性。 Brick补充：本页末尾第10个Search按钮带尾部Icon，用于Vue子节点顺序映射，不计原站9个按钮。",
+        "en-US": "`Button` components can contain an `Icon`. This is done by setting the `icon` property or placing an `Icon` component within the `Button`.\n\nIf you want specific control over the positioning and placement of the `Icon`, then that should be done by placing the `Icon` component within the `Button` rather than using the `icon` property."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/icon.md",
+      "sourceSHA256": "e32e952bd6786c5a07ec4a0d2fdc3c267026cbf7a35f10366b5f9fec3a806651",
+      "upstreamReactCode": "import { Button } from 'antd';\n\nReactDOM.render(\n  <div>\n    <Button type=\"primary\" shape=\"circle\" icon=\"search\" />\n    <Button type=\"primary\" shape=\"circle\">\n      A\n    </Button>\n    <Button type=\"primary\" icon=\"search\">\n      Search\n    </Button>\n    <Button shape=\"circle\" icon=\"search\" />\n    <Button icon=\"search\">Search</Button>\n    <br />\n    <Button shape=\"circle\" icon=\"search\" />\n    <Button icon=\"search\">Search</Button>\n    <Button type=\"dashed\" shape=\"circle\" icon=\"search\" />\n    <Button type=\"dashed\" icon=\"search\">\n      Search\n    </Button>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { Button, Icon } from '@brick/components'\n</script>\n<template><div class=\"demo-stack\"><div class=\"demo-row\"><Button type=\"primary\" shape=\"circle\" icon=\"search\" aria-label=\"搜索\"/><Button type=\"primary\" shape=\"circle\">A</Button><Button type=\"primary\" icon=\"search\">Search</Button><Button shape=\"circle\" icon=\"search\" aria-label=\"搜索\"/><Button icon=\"search\">Search</Button></div><div class=\"demo-row\"><Button shape=\"circle\" icon=\"search\" aria-label=\"搜索\"/><Button icon=\"search\">Search</Button><Button type=\"dashed\" shape=\"circle\" icon=\"search\" aria-label=\"搜索\"/><Button type=\"dashed\" icon=\"search\">Search</Button><Button>Search<Icon type=\"search\"/></Button></div></div></template>\n",
+      "vueSourceSHA256": "2fc69af79266ef3572c56c245a03cf1477203c6545cb5a85a068896800a6cfeb"
+    },
+    {
+      "id": "size",
+      "order": 2,
+      "title": {
+        "zh-CN": "按钮尺寸",
+        "en-US": "Size"
+      },
+      "description": {
+        "zh-CN": "按钮有大、中、小三种尺寸。\n\n通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。",
+        "en-US": "Ant Design supports a default button size as well as a large and small size.\n\nIf a large or small button is desired, set the `size` property to either `large` or `small` respectively. Omit the `size` property for a button with the default size."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/size.md",
+      "sourceSHA256": "1840091a42534d934a525ae9ccf60bf05da11ca13d294f3a889f0e7574c63ce2",
+      "upstreamReactCode": "import { Button, Radio, Icon } from 'antd';\n\nclass ButtonSize extends React.Component {\n  state = {\n    size: 'large',\n  };\n\n  handleSizeChange = e => {\n    this.setState({ size: e.target.value });\n  };\n\n  render() {\n    const { size } = this.state;\n    return (\n      <div>\n        <Radio.Group value={size} onChange={this.handleSizeChange}>\n          <Radio.Button value=\"large\">Large</Radio.Button>\n          <Radio.Button value=\"default\">Default</Radio.Button>\n          <Radio.Button value=\"small\">Small</Radio.Button>\n        </Radio.Group>\n        <br />\n        <br />\n        <Button type=\"primary\" size={size}>\n          Primary\n        </Button>\n        <Button size={size}>Normal</Button>\n        <Button type=\"dashed\" size={size}>\n          Dashed\n        </Button>\n        <Button type=\"danger\" size={size}>\n          Danger\n        </Button>\n        <Button type=\"link\" size={size}>\n          Link\n        </Button>\n        <br />\n        <Button type=\"primary\" icon=\"download\" size={size} />\n        <Button type=\"primary\" shape=\"circle\" icon=\"download\" size={size} />\n        <Button type=\"primary\" shape=\"round\" icon=\"download\" size={size} />\n        <Button type=\"primary\" shape=\"round\" icon=\"download\" size={size}>\n          Download\n        </Button>\n        <Button type=\"primary\" icon=\"download\" size={size}>\n          Download\n        </Button>\n        <br />\n        <Button.Group size={size}>\n          <Button type=\"primary\">\n            <Icon type=\"left\" />\n            Backward\n          </Button>\n          <Button type=\"primary\">\n            Forward\n            <Icon type=\"right\" />\n          </Button>\n        </Button.Group>\n      </div>\n    );\n  }\n}\n\nReactDOM.render(<ButtonSize />, mountNode);",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nimport { Button, ButtonGroup, Icon } from '@brick/components'\nconst size = ref<'large'|'default'|'small'>('large')\n</script>\n<template><div class=\"demo-stack\"><fieldset class=\"size-choice\"><legend>按钮尺寸</legend><label v-for=\"value in (['large','default','small'] as const)\" :key=\"value\"><input v-model=\"size\" type=\"radio\" :value=\"value\"/>{{value}}</label></fieldset><div class=\"demo-row\"><Button type=\"primary\" :size=\"size\">Primary</Button><Button :size=\"size\">Normal</Button><Button type=\"dashed\" :size=\"size\">Dashed</Button><Button type=\"danger\" :size=\"size\">Danger</Button><Button type=\"link\" :size=\"size\">Link</Button></div><div class=\"demo-row\"><Button type=\"primary\" icon=\"download\" :size=\"size\" aria-label=\"下载\"/><Button type=\"primary\" shape=\"circle\" icon=\"download\" :size=\"size\" aria-label=\"下载\"/><Button type=\"primary\" shape=\"round\" icon=\"download\" :size=\"size\" aria-label=\"下载\"/><Button type=\"primary\" shape=\"round\" icon=\"download\" :size=\"size\">Download</Button><Button type=\"primary\" icon=\"download\" :size=\"size\">Download</Button></div><ButtonGroup :size=\"size\"><Button type=\"primary\"><Icon type=\"left\"/>Backward</Button><Button type=\"primary\">Forward<Icon type=\"right\"/></Button></ButtonGroup></div></template>\n",
+      "vueSourceSHA256": "fc8deb9ad0348b26adac84352b5965f028237c508ef295ad3c1882503bfdbb5f"
+    },
+    {
+      "id": "disabled",
+      "order": 3,
+      "title": {
+        "zh-CN": "不可用状态",
+        "en-US": "Disabled"
+      },
+      "description": {
+        "zh-CN": "添加 `disabled` 属性即可让按钮处于不可用状态，同时按钮样式也会改变。",
+        "en-US": "To mark a button as disabled, add the `disabled` property to the `Button`."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/disabled.md",
+      "sourceSHA256": "4cc661b2ac5afb40193500f10eb80e231e76916d387ac00a714299be8951d46c",
+      "upstreamReactCode": "import { Button } from 'antd';\n\nReactDOM.render(\n  <div>\n    <Button type=\"primary\">Primary</Button>\n    <Button type=\"primary\" disabled>\n      Primary(disabled)\n    </Button>\n    <br />\n    <Button>Default</Button>\n    <Button disabled>Default(disabled)</Button>\n    <br />\n    <Button type=\"dashed\">Dashed</Button>\n    <Button type=\"dashed\" disabled>\n      Dashed(disabled)\n    </Button>\n    <br />\n    <Button type=\"link\">Link</Button>\n    <Button type=\"link\" disabled>\n      Link(disabled)\n    </Button>\n    <div style={{ padding: '8px 8px 0 8px', background: 'rgb(190, 200, 200)' }}>\n      <Button ghost>Ghost</Button>\n      <Button ghost disabled>\n        Ghost(disabled)\n      </Button>\n    </div>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nimport { Button } from '@brick/components'\nconst clicks=ref(0)\n</script>\n<template><div class=\"demo-stack\"><div v-for=\"type in (['primary','default','dashed','link'] as const)\" :key=\"type\" class=\"demo-row\"><Button :type=\"type\" @click=\"clicks++\">{{type}}</Button><Button :type=\"type\" disabled @click=\"clicks++\">{{type}}(disabled)</Button></div><div class=\"ghost-surface ghost-surface-disabled demo-row\"><Button ghost @click=\"clicks++\">Ghost</Button><Button ghost disabled @click=\"clicks++\">Ghost(disabled)</Button></div><output aria-live=\"polite\">有效点击：{{clicks}}</output></div></template>\n",
+      "vueSourceSHA256": "d6679c80a97681c64725335cc1cdf3f660a081f4309e46bdfdc40a3fb61aaeac"
+    },
+    {
+      "id": "loading",
+      "order": 4,
+      "title": {
+        "zh-CN": "加载中状态",
+        "en-US": "Loading"
+      },
+      "description": {
+        "zh-CN": "添加 loading 属性可让按钮处于加载状态。原站原文“最后两个按钮演示点击后进入加载状态”对应本页 Click me! 与 Click with icon（带poweroff图标），不是本页补充的 Delayed loading / Reset loading。",
+        "en-US": "A loading indicator can be added to a button by setting the `loading` property on the `Button`."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/loading.md",
+      "sourceSHA256": "51e4adfaf874c49cab394f25e3511d939bfccdf3e43cd08cbf39a91d756dd40e",
+      "upstreamReactCode": "import { Button } from 'antd';\n\nclass App extends React.Component {\n  state = {\n    loading: false,\n    iconLoading: false,\n  };\n\n  enterLoading = () => {\n    this.setState({ loading: true });\n  };\n\n  enterIconLoading = () => {\n    this.setState({ iconLoading: true });\n  };\n\n  render() {\n    return (\n      <div>\n        <Button type=\"primary\" loading>\n          Loading\n        </Button>\n        <Button type=\"primary\" size=\"small\" loading>\n          Loading\n        </Button>\n        <br />\n        <Button type=\"primary\" loading={this.state.loading} onClick={this.enterLoading}>\n          Click me!\n        </Button>\n        <Button\n          type=\"primary\"\n          icon=\"poweroff\"\n          loading={this.state.iconLoading}\n          onClick={this.enterIconLoading}\n        >\n          Click me!\n        </Button>\n        <br />\n        <Button type=\"primary\" loading />\n        <Button type=\"primary\" shape=\"circle\" loading />\n        <Button type=\"danger\" shape=\"round\" loading />\n      </div>\n    );\n  }\n}\n\nReactDOM.render(<App />, mountNode);",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nimport { Button } from '@brick/components'\nconst loading=ref(false),iconLoading=ref(false),delayed=ref(false)\n</script>\n<!-- 原站 loading.md 两个交互按钮原文均为 Click me!，第二个有 poweroff 图标；本页对应 Click me! / Click with icon。 -->\n<template><div class=\"demo-stack\"><div class=\"demo-row\"><Button type=\"primary\" loading>Loading</Button><Button type=\"primary\" size=\"small\" loading>Loading</Button></div><div class=\"demo-row\"><Button type=\"primary\" :loading=\"loading\" @click=\"loading=true\">Click me!</Button><Button type=\"primary\" icon=\"poweroff\" :loading=\"iconLoading\" @click=\"iconLoading=true\">Click with icon</Button></div><div class=\"demo-row\"><Button type=\"primary\" loading aria-label=\"加载中\"/><Button type=\"primary\" shape=\"circle\" loading aria-label=\"加载中\"/><Button type=\"danger\" shape=\"round\" loading aria-label=\"加载中\"/></div><div class=\"demo-row\"><Button type=\"primary\" :loading=\"delayed ? {delay:800} : false\" @click=\"delayed=true\">Delayed loading</Button><Button @click=\"loading=false;iconLoading=false;delayed=false\">Reset loading</Button></div><p>补充 API 演示：delay 单位毫秒；800ms 内可取消，重置后清除计时。</p></div></template>\n",
+      "vueSourceSHA256": "47847f0fc6e0f5e94d5295672615d79311c261a6e08885f2dd619890c4959c53"
+    },
+    {
+      "id": "multiple",
+      "order": 5,
+      "title": {
+        "zh-CN": "多个按钮组合",
+        "en-US": "Multiple Buttons"
+      },
+      "description": {
+        "zh-CN": "按钮组合使用时，推荐使用 1 个主操作 + n 个次操作，3 个以上操作时把更多操作放到 `Dropdown.Button` 中组合使用。",
+        "en-US": "If you need several buttons, we recommend that you use 1 primary button + n secondary buttons, and if there are more than three operations, you can group some of them into `Dropdown.Button`."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/multiple.md",
+      "sourceSHA256": "d4348f3775a2470bece5f26117e833c18b78e37e2036e08fb584ba489727950a",
+      "upstreamReactCode": "import { Button, Menu, Dropdown, Icon } from 'antd';\n\nfunction handleMenuClick(e) {\n  console.log('click', e);\n}\n\nconst menu = (\n  <Menu onClick={handleMenuClick}>\n    <Menu.Item key=\"1\">1st item</Menu.Item>\n    <Menu.Item key=\"2\">2nd item</Menu.Item>\n    <Menu.Item key=\"3\">3rd item</Menu.Item>\n  </Menu>\n);\n\nReactDOM.render(\n  <div>\n    <Button type=\"primary\">primary</Button>\n    <Button>secondary</Button>\n    <Dropdown overlay={menu}>\n      <Button>\n        Actions <Icon type=\"down\" />\n      </Button>\n    </Dropdown>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nimport { Button, Icon, useButtonActionMenu } from '@brick/components'\nconst selected = ref('')\nconst { open, trigger, menu, toggle, triggerKeydown, menuKeydown, choose } =\n  useButtonActionMenu(value => { selected.value = value })\n</script>\n<template>\n  <div class=\"demo-stack\">\n    <div class=\"demo-row\">\n      <Button type=\"primary\" @click=\"selected='primary'\">primary</Button>\n      <Button @click=\"selected='secondary'\">secondary</Button>\n      <span class=\"actions-wrap\">\n        <Button ref=\"trigger\" aria-haspopup=\"menu\" aria-controls=\"button-multiple-actions\"\n          :aria-expanded=\"open\" @click=\"toggle\" @keydown=\"triggerKeydown\">Actions<Icon type=\"down\"/></Button>\n        <span v-if=\"open\" id=\"button-multiple-actions\" ref=\"menu\" class=\"actions-menu\" role=\"menu\" @keydown=\"menuKeydown\">\n          <Button v-for=\"item in ['1st item','2nd item','3rd item']\" :key=\"item\"\n            role=\"menuitem\" tabindex=\"-1\" @click=\"choose(item)\">{{item}}</Button>\n        </span>\n      </span>\n    </div>\n    <output aria-live=\"polite\">{{selected ? '已选择：'+selected : '请选择操作'}}</output>\n    <p>自主 Button 与原生菜单组合；支持方向键、Home/End、Escape 回焦、Tab 关闭及外部点击关闭，不声称完整 Dropdown 产品。</p>\n  </div>\n</template>\n",
+      "vueSourceSHA256": "026881817ed1840ec5d44cc26e96a1ae616882bd347386cef5938d4ffc9fd744"
+    },
+    {
+      "id": "button-group",
+      "order": 6,
+      "title": {
+        "zh-CN": "按钮组合",
+        "en-US": "Button Group"
+      },
+      "description": {
+        "zh-CN": "可以将多个 `Button` 放入 `Button.Group` 的容器中。\n\n通过设置 `size` 为 `large` `small` 分别把按钮组合设为大、小尺寸。若不设置 `size`，则尺寸为中。",
+        "en-US": "Buttons can be grouped by placing multiple `Button` components into a `Button.Group`.\n\nThe `size` can be set to `large`, `small` or left unset resulting in a default size."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/button-group.md",
+      "sourceSHA256": "d7e4e4327c6f17c3f1bab5730a1ab34f214941840a12f497f2480e58bebfb337",
+      "upstreamReactCode": "import { Button, Icon } from 'antd';\n\nconst ButtonGroup = Button.Group;\n\nReactDOM.render(\n  <div>\n    <h4>Basic</h4>\n    <ButtonGroup>\n      <Button>Cancel</Button>\n      <Button>OK</Button>\n    </ButtonGroup>\n    <ButtonGroup>\n      <Button disabled>L</Button>\n      <Button disabled>M</Button>\n      <Button disabled>R</Button>\n    </ButtonGroup>\n    <ButtonGroup>\n      <Button>L</Button>\n      <Button>M</Button>\n      <Button>R</Button>\n    </ButtonGroup>\n\n    <h4>With Icon</h4>\n    <ButtonGroup>\n      <Button type=\"primary\">\n        <Icon type=\"left\" />\n        Go back\n      </Button>\n      <Button type=\"primary\">\n        Go forward\n        <Icon type=\"right\" />\n      </Button>\n    </ButtonGroup>\n    <ButtonGroup>\n      <Button type=\"primary\" icon=\"cloud\" />\n      <Button type=\"primary\" icon=\"cloud-download\" />\n    </ButtonGroup>\n    <ButtonGroup>\n      <Button type=\"primary\" size=\"small\" icon=\"cloud\" />\n      <Button type=\"primary\" size=\"small\" icon=\"cloud-download\" />\n    </ButtonGroup>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { Button, ButtonGroup, Icon } from '@brick/components'\n</script>\n<template><div class=\"demo-stack\"><h4>Basic</h4><div class=\"demo-row\"><ButtonGroup><Button>Cancel</Button><Button>OK</Button></ButtonGroup><ButtonGroup><Button disabled>L</Button><Button disabled>M</Button><Button disabled>R</Button></ButtonGroup><ButtonGroup><Button>L</Button><Button>M</Button><Button>R</Button></ButtonGroup></div><h4>With Icon</h4><div class=\"demo-row\"><ButtonGroup><Button type=\"primary\"><Icon type=\"left\"/>Go back</Button><Button type=\"primary\">Go forward<Icon type=\"right\"/></Button></ButtonGroup><ButtonGroup><Button type=\"primary\" icon=\"cloud\" aria-label=\"云\"/><Button type=\"primary\" icon=\"cloud-download\" aria-label=\"云下载\"/></ButtonGroup><ButtonGroup size=\"small\"><Button type=\"primary\" icon=\"cloud\" aria-label=\"云\"/><Button type=\"primary\" icon=\"cloud-download\" aria-label=\"云下载\"/></ButtonGroup></div></div></template>\n",
+      "vueSourceSHA256": "906e7c2ff18b6980382df47ef4fb5a721e68b5c75c94ad888106bb175c4bc925"
+    },
+    {
+      "id": "ghost",
+      "order": 8,
+      "title": {
+        "zh-CN": "幽灵按钮",
+        "en-US": "Ghost Button"
+      },
+      "description": {
+        "zh-CN": "幽灵按钮将按钮的内容反色，背景变为透明，常用在有色背景上。",
+        "en-US": "`ghost` property will make button's background transparent, it is commonly used in colored background."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/ghost.md",
+      "sourceSHA256": "409faa35f22457134948da2ed3853f281cd6494970c618be089fdce36a06d441",
+      "upstreamReactCode": "import { Button } from 'antd';\n\nReactDOM.render(\n  <div style={{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }}>\n    <Button type=\"primary\" ghost>\n      Primary\n    </Button>\n    <Button ghost>Default</Button>\n    <Button type=\"dashed\" ghost>\n      Dashed\n    </Button>\n    <Button type=\"danger\" ghost>\n      danger\n    </Button>\n    <Button type=\"link\" ghost>\n      link\n    </Button>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { Button } from '@brick/components'\n</script>\n<template><div class=\"ghost-surface ghost-surface-standalone demo-row\"><Button type=\"primary\" ghost>Primary</Button><Button ghost>Default</Button><Button type=\"dashed\" ghost>Dashed</Button><Button type=\"danger\" ghost>danger</Button><Button type=\"link\" ghost>link</Button></div></template>\n",
+      "vueSourceSHA256": "0beae1abf8a9ed0c1aa874c5fa2960565deb35490b0bc52f68e2635698106adc"
+    },
+    {
+      "id": "block",
+      "order": 9,
+      "title": {
+        "zh-CN": "block 按钮",
+        "en-US": "block Button"
+      },
+      "description": {
+        "zh-CN": "`block`属性将使按钮适合其父宽度。",
+        "en-US": "`block` property will make the button fit to its parent width."
+      },
+      "debug": false,
+      "sourcePath": "components/button/demo/block.md",
+      "sourceSHA256": "89c41fd98ba05249dc6abbed2a28f22fd102b1ca427106b52bd4bffebb660848",
+      "upstreamReactCode": "import { Button } from 'antd';\n\nReactDOM.render(\n  <div>\n    <Button type=\"primary\" block>\n      Primary\n    </Button>\n    <Button block>Default</Button>\n    <Button type=\"dashed\" block>\n      Dashed\n    </Button>\n    <Button type=\"danger\" block>\n      Danger\n    </Button>\n    <Button type=\"link\" block>\n      Link\n    </Button>\n  </div>,\n  mountNode,\n);",
+      "code": "<script setup lang=\"ts\">\nimport { Button } from '@brick/components'\n</script>\n<template><div class=\"demo-stack\"><Button type=\"primary\" block>Primary</Button><Button block>Default</Button><Button type=\"dashed\" block>Dashed</Button><Button type=\"danger\" block>Danger</Button><Button type=\"link\" block>Link</Button></div></template>\n",
+      "vueSourceSHA256": "48c1e37924f86408d7cc737f3a52d3ab3ef05f9dbfed41381d651cdac8b30773"
+    }
+  ],
+  "supplementary": [
+    {
+      "id": "api-extra",
+      "title": {
+        "zh-CN": "表单、链接与兼容 API",
+        "en-US": "Form, links and compatibility"
+      },
+      "description": {
+        "zh-CN": "Brick 新增补充示例：验证 htmlType/href/target、兼容枚举与中文间距，不计上游公开案例。",
+        "en-US": "Brick-only supplementary example, not an upstream demo."
+      },
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nimport { Button } from '@brick/components'\nconst submitted=ref(0)\n</script>\n<template><div class=\"demo-stack\"><form @submit.prevent=\"submitted++\" @reset=\"submitted=0\" class=\"demo-row\"><Button html-type=\"submit\" type=\"primary\">Submit</Button><Button html-type=\"reset\">Reset</Button><output>提交：{{submitted}}</output></form><div class=\"demo-row\"><Button href=\"#api\" target=\"_self\">API anchor</Button><Button href=\"https://3x.ant.design/components/button-cn/\" target=\"_blank\" rel=\"noopener noreferrer\">上游文档</Button><Button href=\"#api\" disabled>Disabled link</Button><Button type=\"ghost\">Legacy ghost type</Button><Button shape=\"circle-outline\" icon=\"search\" aria-label=\"兼容圆形\"/><Button>按钮</Button></div><p>Brick补充：真实表单、链接、兼容枚举与中文间距；不是第10个上游公开案例。</p></div></template>\n",
+      "order": 99,
+      "debug": false,
+      "sourcePath": null,
+      "vueSourceSHA256": "629827bb8c56252f67ac9d42ed56151a10084fa7640603db0633b85d1306762a"
+    }
+  ],
+  "api": [
+    {
+      "name": "disabled",
+      "description": {
+        "zh-CN": "按钮失效状态",
+        "en-US": "disabled state of button"
+      },
+      "upstreamType": "boolean",
+      "upstreamDefault": {
+        "zh-CN": "`false`",
+        "en-US": "`false`"
+      },
+      "vueType": "boolean",
+      "vueDefault": "false",
+      "since": "3.5.1",
+      "mapping": "disabled"
+    },
+    {
+      "name": "ghost",
+      "description": {
+        "zh-CN": "幽灵属性，使按钮背景透明，版本 2.7 中增加",
+        "en-US": "make background transparent and invert text and border colors, added in 2.7"
+      },
+      "upstreamType": "boolean",
+      "upstreamDefault": {
+        "zh-CN": "false",
+        "en-US": "`false`"
+      },
+      "vueType": "boolean",
+      "vueDefault": "false",
+      "since": "",
+      "mapping": "ghost"
+    },
+    {
+      "name": "href",
+      "description": {
+        "zh-CN": "点击跳转的地址，指定此属性 button 的行为和 a 链接一致",
+        "en-US": "redirect url of link button"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "-",
+        "en-US": "-"
+      },
+      "vueType": "string",
+      "vueDefault": "undefined",
+      "since": "",
+      "mapping": "href"
+    },
+    {
+      "name": "htmlType",
+      "description": {
+        "zh-CN": "设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type)",
+        "en-US": "set the original html `type` of `button`, see: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type)"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "`button`",
+        "en-US": "`button`"
+      },
+      "vueType": "'button' | 'submit' | 'reset'",
+      "vueDefault": "button",
+      "since": "",
+      "mapping": "html-type"
+    },
+    {
+      "name": "icon",
+      "description": {
+        "zh-CN": "设置按钮的图标类型",
+        "en-US": "set the icon of button, see: Icon component"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "-",
+        "en-US": "-"
+      },
+      "vueType": "string",
+      "vueDefault": "undefined",
+      "since": "",
+      "mapping": "icon"
+    },
+    {
+      "name": "loading",
+      "description": {
+        "zh-CN": "设置按钮载入状态",
+        "en-US": "set the loading status of button"
+      },
+      "upstreamType": "boolean | { delay: number }",
+      "upstreamDefault": {
+        "zh-CN": "`false`",
+        "en-US": "`false`"
+      },
+      "vueType": "boolean | { delay?: number }",
+      "vueDefault": "false",
+      "since": "",
+      "mapping": "loading"
+    },
+    {
+      "name": "shape",
+      "description": {
+        "zh-CN": "设置按钮形状，可选值为 `circle`、 `round` 或者不设",
+        "en-US": "can be set to `circle`, `round` or omitted"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "-",
+        "en-US": "-"
+      },
+      "vueType": "'circle' | 'round' | 'circle-outline'",
+      "vueDefault": "undefined",
+      "since": "",
+      "mapping": "shape"
+    },
+    {
+      "name": "size",
+      "description": {
+        "zh-CN": "设置按钮大小，可选值为 `small` `large` 或者不设",
+        "en-US": "can be set to `small` `large` or omitted"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "`default`",
+        "en-US": "`default`"
+      },
+      "vueType": "'default' | 'large' | 'small'",
+      "vueDefault": "default",
+      "since": "",
+      "mapping": "size"
+    },
+    {
+      "name": "target",
+      "description": {
+        "zh-CN": "相当于 a 链接的 target 属性，href 存在时生效",
+        "en-US": "same as target attribute of a, works when href is specified"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "-",
+        "en-US": "-"
+      },
+      "vueType": "string",
+      "vueDefault": "undefined",
+      "since": "",
+      "mapping": "target"
+    },
+    {
+      "name": "type",
+      "description": {
+        "zh-CN": "设置按钮类型，可选值为 `primary` `dashed` `danger` `link`(3.17 中增加) 或者不设",
+        "en-US": "can be set to `primary` `ghost` `dashed` `danger` `link`(added in 3.17) or omitted (meaning `default`)"
+      },
+      "upstreamType": "string",
+      "upstreamDefault": {
+        "zh-CN": "-",
+        "en-US": "`default`"
+      },
+      "vueType": "'default' | 'primary' | 'dashed' | 'danger' | 'link' | 'ghost'",
+      "vueDefault": "default",
+      "since": "",
+      "mapping": "type"
+    },
+    {
+      "name": "onClick",
+      "description": {
+        "zh-CN": "点击按钮时的回调",
+        "en-US": "set the handler to handle `click` event"
+      },
+      "upstreamType": "(event) => void",
+      "upstreamDefault": {
+        "zh-CN": "-",
+        "en-US": "-"
+      },
+      "vueType": "@click: (event: MouseEvent) => void",
+      "vueDefault": "—",
+      "since": "",
+      "mapping": "@click"
+    },
+    {
+      "name": "block",
+      "description": {
+        "zh-CN": "将按钮宽度调整为其父宽度的选项",
+        "en-US": "option to fit button width to its parent width"
+      },
+      "upstreamType": "boolean",
+      "upstreamDefault": {
+        "zh-CN": "`false`",
+        "en-US": "`false`"
+      },
+      "vueType": "boolean",
+      "vueDefault": "false",
+      "since": "3.8.0",
+      "mapping": "block"
+    }
+  ],
+  "groupAPI": [
+    {
+      "name": "size",
+      "type": "'large' | 'default' | 'small'",
+      "default": "default"
+    },
+    {
+      "name": "default slot",
+      "type": "Vue VNodes",
+      "default": "—"
+    }
+  ],
+  "mapping": [
+    {
+      "react": "children",
+      "vue": "default slot"
+    },
+    {
+      "react": "onClick",
+      "vue": "@click / MouseEvent"
+    },
+    {
+      "react": "className",
+      "vue": "class（原生透传）"
+    },
+    {
+      "react": "style",
+      "vue": "style（原生透传）"
+    },
+    {
+      "react": "Button.Group",
+      "vue": "命名导出ButtonGroup，无Button.Group静态别名；子Button显式size优先于Group继承，未指定时继承。"
+    },
+    {
+      "react": "icon string / inline Icon",
+      "vue": "icon具名slot优先于icon prop，空slot回退prop；Icon子节点保原顺序。具名slot为Brick扩展。"
+    },
+    {
+      "react": "ConfigProvider.autoInsertSpaceInButton",
+      "vue": "Brick本地autoInsertSpaceInButton布尔prop，默认true；false关闭。不提供全局ConfigProvider，不计上游12个公开API。"
+    },
+    {
+      "react": "prefixCls",
+      "vue": "不公开prefixCls；Brick类名前缀固定，不能视为可配置兼容prop。"
+    },
+    {
+      "react": "ref",
+      "vue": "Brick ButtonRef扩展：focus(FocusOptions)、blur()、element；不是直接HTMLElement实例。"
+    }
+  ],
+  "specialItems": [
+    {
+      "kind": "hidden-debug-demos",
+      "count": 0,
+      "evidence": "固定tag全部demo/*.md共9文件，无debug:true；order缺7不是第10个隐藏案例"
+    },
+    {
+      "kind": "localized-public-api-difference",
+      "items": [
+        "type=ghost"
+      ],
+      "evidence": "中文公开API未列type=ghost，但英文公开API及button.tsx均列；不是source-only。ghost布尔属性独立。"
+    },
+    {
+      "kind": "source-only-enum",
+      "items": [
+        "shape=circle-outline"
+      ],
+      "evidence": "button.tsx L67–74含兼容枚举；中英文公开shape仅circle/round。"
+    },
+    {
+      "kind": "source-only-props",
+      "items": [
+        "prefixCls",
+        "className",
+        "children"
+      ],
+      "evidence": "BaseButtonProps L76–87，React→Vue映射/组件合同单列"
+    },
+    {
+      "kind": "upstream-tests-and-styles",
+      "files": [
+        "components/button/__tests__/__snapshots__/demo.test.js.snap",
+        "components/button/__tests__/__snapshots__/index.test.js.snap",
+        "components/button/__tests__/demo.test.js",
+        "components/button/__tests__/index.test.js",
+        "components/button/style/index.less",
+        "components/button/style/index.tsx",
+        "components/button/style/mixin.less"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "AntD3 Button 中文",
+      "url": "https://3x.ant.design/components/button-cn/"
+    },
+    {
+      "label": "AntD3 Button English",
+      "url": "https://3x.ant.design/components/button/"
+    },
+    {
+      "label": "HTML button type",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type"
+    },
+    {
+      "label": "ConfigProvider autoInsertSpaceInButton",
+      "url": "https://3x.ant.design/components/config-provider-cn/#API"
+    },
+    {
+      "label": "Icon",
+      "url": "https://3x.ant.design/components/icon-cn/"
+    },
+    {
+      "label": "Contribution",
+      "url": "https://3x.ant.design/docs/react/contributing-cn"
+    },
+    {
+      "label": "Upstream exact source",
+      "url": "https://github.com/ant-design/ant-design/tree/bc0f0b62ea809be1b5093a464c74b1ca3f906d49/components/button"
+    }
+  ],
+  "faq": "AntD3 对只有两个汉字且非link/无icon的单子节点自动插空格；上游全局ConfigProvider可关闭。Brick默认开启，通过本地autoInsertSpaceInButton=false关闭；组件/翻译slot按textContent回退letter-spacing，不改其子DOM。不实现全局ConfigProvider。icon-only须提供aria-label；disabled及有效loading链接阻止导航；delay单位毫秒，延迟期仍可点击，false取消计时。Button默认htmlType=button，submit/reset保留真实表单默认行为。主按钮同区域最多一个。推荐prop顺序 type→shape→size→loading→disabled。prefixCls不公开；React className映射Vue class，children映射default slot，不支持children prop。type=ghost与ghost布尔属性不同；shape=circle-outline为源兼容值。 FAQ图来源：https://gw.alipayobjects.com/zos/antfincdn/Hz5HL9gsT4/f29f170d-b78d-4d2b-aa71-0da6a9ead4d9.png；保留原始外部图链接以追溯FAQ，不复制第三方CDN图片入包；静态交付不依赖外图加载来解释空格规则。",
+  "limitations": [
+    "AntD3在固定tag未提供LLMs；llms.txt/button.md/llms-full.txt/button.json为Brick新增。",
+    "Dropdown/Radio为原生交互演示，未宣称独立完整Brick Dropdown/Radio组件；不使用AntD示例替身。",
+    "Sutras标准DemoBox/toolbar/REPL/Shiki沿既有DemoContext适配；不是完整pluginMkit迁移。",
+    "原生取消回静态构建示例并保源码修改，不是源码回滚。",
+    "不声称全组件库、全可访问性或不可信代码隔离已经完成。",
+    "精卫COMP-FULL-R2已集成。自主有限Wave仅可用非link原生按钮，固定550ms、本地token；reduced-motion不创建。没有上游computed-border动态取色/隐藏元素/CSP全局伪元素机制，不是上游完全等价动画。自主SVG存在像素差异。工程自检不是独立验收。"
+  ],
+  "counts": {
+    "publicDemos": 9,
+    "hiddenDebugDemos": 0,
+    "supplementaryDemos": 1,
+    "documentedAPI": 12,
+    "groupAPI": 2,
+    "llmArtifacts": 4
+  },
+  "sourceFiles": [
+    {
+      "path": "components/button/__tests__/__snapshots__/demo.test.js.snap",
+      "sha256": "07f5c5eee1eee35645d05d1f39f4f91d4f30036acd76bb18e6c82151354fa921",
+      "bytes": 33570
+    },
+    {
+      "path": "components/button/__tests__/__snapshots__/index.test.js.snap",
+      "sha256": "e545da2b08a4102dc0c699f804b3164bb78df55461845a32797508c450834983",
+      "bytes": 6603
+    },
+    {
+      "path": "components/button/__tests__/demo.test.js",
+      "sha256": "6a2655be98357949627dc1d3c058ec9279817dd76df519ea2dfd884c9f755413",
+      "bytes": 76
+    },
+    {
+      "path": "components/button/__tests__/index.test.js",
+      "sha256": "ff7af61fc17df145656ee4fe78fcf71160f75c0896a1efccffc8c4df78bbbff5",
+      "bytes": 7130
+    },
+    {
+      "path": "components/button/button-group.tsx",
+      "sha256": "4727d6e29e12c5d29bd73db2c719ddda21154f6492378273ada3536f7ce19297",
+      "bytes": 1127
+    },
+    {
+      "path": "components/button/button.tsx",
+      "sha256": "e8a9f12f5ca840a2b80e9f92515a309f93aeb53a8583a02087c18e52d6cdd733",
+      "bytes": 8745
+    },
+    {
+      "path": "components/button/demo/basic.md",
+      "sha256": "011c5b842477d72c10985951f5c76fb728e8a8bc38410cc91d459b298be4d2c3",
+      "bytes": 626
+    },
+    {
+      "path": "components/button/demo/block.md",
+      "sha256": "89c41fd98ba05249dc6abbed2a28f22fd102b1ca427106b52bd4bffebb660848",
+      "bytes": 568
+    },
+    {
+      "path": "components/button/demo/button-group.md",
+      "sha256": "d7e4e4327c6f17c3f1bab5730a1ab34f214941840a12f497f2480e58bebfb337",
+      "bytes": 1786
+    },
+    {
+      "path": "components/button/demo/disabled.md",
+      "sha256": "4cc661b2ac5afb40193500f10eb80e231e76916d387ac00a714299be8951d46c",
+      "bytes": 1004
+    },
+    {
+      "path": "components/button/demo/ghost.md",
+      "sha256": "409faa35f22457134948da2ed3853f281cd6494970c618be089fdce36a06d441",
+      "bytes": 721
+    },
+    {
+      "path": "components/button/demo/icon.md",
+      "sha256": "e32e952bd6786c5a07ec4a0d2fdc3c267026cbf7a35f10366b5f9fec3a806651",
+      "bytes": 1241
+    },
+    {
+      "path": "components/button/demo/loading.md",
+      "sha256": "51e4adfaf874c49cab394f25e3511d939bfccdf3e43cd08cbf39a91d756dd40e",
+      "bytes": 1364
+    },
+    {
+      "path": "components/button/demo/multiple.md",
+      "sha256": "d4348f3775a2470bece5f26117e833c18b78e37e2036e08fb584ba489727950a",
+      "bytes": 1003
+    },
+    {
+      "path": "components/button/demo/size.md",
+      "sha256": "1840091a42534d934a525ae9ccf60bf05da11ca13d294f3a889f0e7574c63ce2",
+      "bytes": 2230
+    },
+    {
+      "path": "components/button/index.en-US.md",
+      "sha256": "9fe565ef85e3c80dd445197f5919ecef99c3952b874234b61597b42716580c2d",
+      "bytes": 2246
+    },
+    {
+      "path": "components/button/index.tsx",
+      "sha256": "33bf729b1dc187102701596cc21802249a5127bc09ebc7de51198827db91dd54",
+      "bytes": 254
+    },
+    {
+      "path": "components/button/index.zh-CN.md",
+      "sha256": "89bc3fd14aa443fd31180de7aae7510f1bef454a8a9a135f062388aed7ab5e17",
+      "bytes": 2276
+    },
+    {
+      "path": "components/button/style/index.less",
+      "sha256": "58dcbde4d11f8c1ed3410f08877ff57bbcc67de90b6e88ebd145032d8c5d2c95",
+      "bytes": 4930
+    },
+    {
+      "path": "components/button/style/index.tsx",
+      "sha256": "5995dcd7f4b53de7617091976e0f88f0bc593e380a79dcd492eaff68ff3f17a6",
+      "bytes": 56
+    },
+    {
+      "path": "components/button/style/mixin.less",
+      "sha256": "7be340c88d3d6d7619e6131a6847ee03743f1edf7b2f21f037942048923ee8e7",
+      "bytes": 9398
+    }
+  ],
+  "downloads": {
+    "package": "brick-components-0.1.0-button-full-r6.tgz",
+    "demoCSS": "demo-layout.css"
+  },
+  "demoStyles": "/* Shared by the document preview and the native Sutras editable iframe. */\n.demo-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}\n.demo-stack{display:flex;flex-direction:column;gap:16px;min-width:0}\n.ghost-surface{background:#bec8c8}\n.ghost-surface-disabled{padding:8px 8px 0 8px}\n.ghost-surface-standalone{padding:26px 16px 16px}\n.size-choice{display:flex;flex-wrap:wrap;gap:12px;border:1px solid #d9d9d9;padding:8px 12px;margin:0;min-width:0}\n.size-choice label{display:inline-flex;align-items:center;gap:4px}\n.actions-wrap{position:relative;display:inline-block}\n.actions-menu{position:absolute;z-index:3;top:100%;right:0;min-width:120px;display:flex;flex-direction:column;padding:4px;background:white;box-shadow:0 2px 8px #0002}\n.demo-stack output{font-size:13px}\n",
+  "loadingClarification": "固定原站loading最后两个交互按钮同文Click me!，第二个带poweroff图标。本页明确标为Click me!和Click with icon；保留上游React原文供追溯，不能将两个按钮当一个。",
+  "faqImage": {
+    "url": "https://gw.alipayobjects.com/zos/antfincdn/Hz5HL9gsT4/f29f170d-b78d-4d2b-aa71-0da6a9ead4d9.png",
+    "source": "AntD3 fixed commit components/button/index.zh-CN.md L43",
+    "handling": "保留原始外部图链接以追溯FAQ，不复制第三方CDN图片入包；静态交付不依赖外图加载来解释空格规则。"
+  }
+}

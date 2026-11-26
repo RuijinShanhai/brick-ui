@@ -1,0 +1,11 @@
+{
+  "name": "@brick/pro-components",
+  "version": "0.0.0-init.1",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "vue": "3.5.46",
+    "@brick/components": "workspace:*"
+  }
+}

@@ -1,0 +1,7 @@
+/* Native VitePress vars/vp-code styles are imported before this host boundary. */
+:root{--vp-font-family-mono:ui-monospace,SFMono-Regular,Consolas,'Noto Sans SC',monospace}
+/* Keep existing LightEditor scroll/overlay correctness, not replacement toolbar widgets. */
+.code-editor .preview pre,.code-editor textarea.editor{margin:0!important;padding:20px 24px!important;border:0!important;border-radius:0!important;font-family:var(--vp-font-family-mono)!important;font-size:13px!important;line-height:1.7!important;letter-spacing:0!important;white-space:pre!important;tab-size:4}
+.code-editor .preview pre code,.code-editor .preview pre span{font-family:inherit;font-size:inherit;line-height:inherit}
+.code-editor .preview{margin:0!important;padding:0!important;background:transparent!important}
+.brick-readonly-source{padding:20px 24px;margin:0;background:var(--vp-code-block-bg);font:13px/1.7 var(--vp-font-family-mono);white-space:pre-wrap;overflow-wrap:anywhere}

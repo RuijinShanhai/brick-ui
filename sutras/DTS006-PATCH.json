@@ -1,0 +1,9 @@
+{
+  "version": "sutras-brick-dts006-r2",
+  "author": "engineering-executor/00000013",
+  "gitBase": "1d04b1d8e90f008815d2d167983cbbcd0457f508",
+  "beforeSHA256": "c5cf2e8cb5d07c03d66beca5a2d5e0859aaf0c494fab61d3f9667a0ae4684a90",
+  "afterSHA256": "d82de30cb0321e758081878fefa8f8f7a4e715d2ae15e7d73ef13a1efd814895",
+  "license": "MIT; inherited copyright unchanged",
+  "commit": null
+}

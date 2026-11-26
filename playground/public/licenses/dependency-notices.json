@@ -1,0 +1,48 @@
+{
+  "dependencies": [
+    {
+      "name": "@ant-design/icons-vue",
+      "version": "7.0.1",
+      "file": "ant-design-icons-vue-LICENSE.txt",
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70"
+    },
+    {
+      "name": "ant-design-vue",
+      "version": "4.1.2",
+      "file": "ant-design-vue-LICENSE.txt",
+      "sha256": "092403b6450d5100dc9746f9cef1c72614118042bf6707ad74b60b4c218050f4"
+    },
+    {
+      "name": "vitepress",
+      "version": "1.0.0-rc.45",
+      "file": "vitepress-LICENSE.txt",
+      "sha256": "6db2f08c2112251083b26df3117dde40c5589d337195953531e7e677d1a600e5"
+    },
+    {
+      "name": "vite-svg-loader",
+      "version": "5.1.0",
+      "file": "vite-svg-loader-LICENSE.txt",
+      "sha256": "d09e3b5add5837162d67a11ab4757cd3732fd13d4a3e1ec98cc1d4b0c7549644"
+    },
+    {
+      "name": "vue",
+      "version": "3.5.46",
+      "file": "vue-LICENSE.txt",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "name": "shiki",
+      "version": "1.2.0",
+      "file": "shiki-LICENSE.txt",
+      "sha256": "7a9d8d01038aeacf9e5bcdabbddf2a7815200dce9fc1118468cc553e00ae3eee"
+    },
+    {
+      "name": "@fontsource/noto-sans-sc",
+      "version": "5.2.8",
+      "file": "fontsource-noto-sans-sc-LICENSE.txt",
+      "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+    }
+  ],
+  "icons_gitHead": "a8b4733c27d0c49efe298e4a30146af0d91b10b3",
+  "scope": "direct native integration dependencies; not exhaustive transitive legal audit"
+}
